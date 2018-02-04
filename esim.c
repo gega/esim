@@ -324,7 +324,7 @@ int main(int argc, char **argv)
     for(i=0;i<NODE_COUNT;i++) nodes[i].id=i+1;
     queue_size=0;
     for(i=0;i<NODE_COUNT;i++) queue_add(&nodes[i],EV_STARTUP,0,1+(rand()%STARTUP_MAX));
-    while(processed_hb<20)
+    while(processed_hb<(10*NODE_COUNT))
     {
       q=NULL;
       while(queue_peektime()==time)
